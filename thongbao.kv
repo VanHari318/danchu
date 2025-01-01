@@ -1,0 +1,46 @@
+MDScreen:
+    name:"thong_bao"
+    Image:
+        source: 'maintheme.jpg'
+        size_hint: None, None
+        width: '360000000dp'
+        height: '640000dp'
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    MDLabel:
+        id:xx
+        text:"Thông báo"
+        pos_hint:{"center_x":0.50,"center_y":.95}
+        font_size:"35sp"
+        halign:"center"
+    MDTextField:
+        id:subject
+        hint_text: 'Subject'
+        icon_right: ''
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.15, 'center_y': 0.7}
+    MDTextField:
+        id:body
+        hint_text: 'Nội dung'
+        icon_right: ''
+        size_hint_x: 0.5
+        size_hint_y: 0.5
+        width: 200
+        height: 1000
+        font_size: 18
+        multiline: True
+        pos_hint: {'center_x': 0.27, 'center_y': 0.4}
+    AnchorLayout:
+        id:datatable
+        pos_hint:{"center_x":.77,"center_y":.50}
+    MDRoundFlatButton:
+        text:"Gửi"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.65,"center_y":.15}
+        size:(100,190)
+        on_release:app.gmail(subject.text,body.text)
+    MDRoundFlatButton:
+        text: "trở về"
+        on_release: root.manager.current = 'giao_dien_chinh';app.clear_contacts_after_search();app.clear_ckeck_press_thongbao_datatable()

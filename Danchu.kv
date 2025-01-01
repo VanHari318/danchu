@@ -1,0 +1,48 @@
+MDScreen:
+    name: 'giao_dien_chinh'
+    MDFloatLayout:
+        ScreenManager:
+            Screen:
+                Image:
+                    source: 'maintheme.jpg'
+                    size_hint: None, None
+                    width: '360000000dp'
+                    height: '640000dp'
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Thanh chức năng"
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+                    Widget:
+                    MDLabel:
+                        id: 'nhan'
+                        text: 'Quản lí nhân khẩu'
+                        halign: 'center'
+        MDNavigationDrawer:
+            id: nav_drawer
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+                MDLabel:
+                    text: 'Chức năng'
+                    size_hint_y: None
+                    height:self.texture_size[1]
+                    color: (0,128,128,1)
+                    bold: True
+                    italic: True
+                ScrollView:
+                    MDList:
+                        TwoLineIconListItem:
+                            text: 'Nhắn tin'
+                            secondary_text: 'Nhắn tin với cán bộ'
+                            IconLeftWidget:
+                                icon: 'chat'
+                                on_press: app.nhantin()
+                        TwoLineIconListItem:
+                            text: 'Thông tin tài khoản'
+                            secondary_text: 'tra cứu thông tin tài khoản'
+                            IconLeftWidget:
+                                icon: 'account'
+                                on_press: root.manager.current = 'profile2'

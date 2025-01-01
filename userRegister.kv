@@ -1,0 +1,79 @@
+MDScreen:
+    name: 'tao_tai_khoan_nguoi_dung'
+    Image:
+        source: 'maintheme.jpg'
+        size_hint: None, None
+        width: '360000000dp'
+        height: '640000dp'
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    MDLabel:
+        id: quan_li
+        text: 'QUẢN LÍ NHÂN KHẨU'
+        color: (0,128,128,1)
+        font_size: 25
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        padding_x: 15
+        pos_hint: {'center_x': 0.5, 'center_y': 0.86}
+    MDTextField:
+        id: username
+        hint_text: 'họ và tên'
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.5, 'center_y': 0.73}
+    MDTextField:
+        id: age
+        hint_text: 'tuổi'
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.5, 'center_y': 0.66}
+    MDTextField:
+        id: city
+        hint_text: 'địa chỉ'
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.5, 'center_y': 0.59}
+    MDTextField:
+        id: cccd
+        hint_text: 'số căn cước công dân'
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.5, 'center_y': 0.52}
+    MDTextField:
+        id: sdt
+        hint_text: 'số điện thoại'
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+    MDTextField:
+        id: mk
+        hint_text: 'gmail'
+        size_hint_x: None
+        width: 200
+        font_size: 18
+        pos_hint: {'center_x': 0.5, 'center_y': 0.38}
+    MDTextButton:
+        text: 'Cập nhật'
+        pos_hint: {'center_x': 0.4, 'center_y': 0.33}
+        font_size: 18
+        halign: 'center'
+        size_hint_x: None
+        on_press: app.infor_user()
+        on_press: root.manager.current = 'tao_tai_khoan_nguoi_dung'
+    MDTextButton:
+        text: 'Xóa'
+        pos_hint: {'center_x': 0.6, 'center_y': 0.33}
+        font_size: 18
+        halign: 'center'
+        size_hint_x: None
+        on_press: app.clearRegister()
+        on_press: root.manager.current = 'tao_tai_khoan_nguoi_dung'
+    MDTextButton:
+        text: 'Trở về'
+        on_press: root.manager.current = 'man_hinh_dang_nhap_nguoi_dung'

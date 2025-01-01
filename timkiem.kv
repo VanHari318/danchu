@@ -1,0 +1,54 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+MDScreen:
+    name:"kiem"
+    Image:
+        source: 'maintheme.jpg'
+        size_hint: None, None
+        width: '360000000dp'
+        height: '640000dp'
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    MDLabel:
+        id:xx
+        text:"Kết quả"
+        pos_hint:{"center_x":0.50,"center_y":.90}
+        font_size:"35sp"
+        halign:"center"
+    AnchorLayout:
+        id:datatable
+        pos_hint:{"center_x":.50,"center_y":.50}
+    MDFloatLayout:
+        MDTextFieldRound:
+            id:tim
+            hint_text:"Số căn cước công dân người cần tìm"
+            icon_right:""
+            pos_hint:{"center_x":.50,"center_y":.83}
+            size_hint:.50,.05
+            font_size:18
+    MDRoundFlatButton:
+        text:"tìm"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.84,"center_y":.83}
+        size:(90,190)
+        on_release:app.search(tim.text);app.clear_contacts_after_search()
+    MDRoundFlatButton:
+        text:"xóa"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.25,"center_y":.15}
+        size:(100,190)
+        on_release:app.delete()
+    MDRoundFlatButton:
+        text:"cập nhật"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.45,"center_y":.15}
+        size:(100,190)
+        on_release:app.updatenewpage()
+    MDRoundFlatButton:
+        text: "trở về"
+        on_release:root.manager.current = 'page'; app.clear_contacts_after_search()
+
+
+
+

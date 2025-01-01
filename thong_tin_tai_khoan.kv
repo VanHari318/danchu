@@ -1,0 +1,53 @@
+Screen:
+    name: 'thong_tin_tai_khoan_k'
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '8dp'
+        padding: '8dp'
+        Image:
+            source: 'user3.png'
+        MDLabel:
+            text: 'Thông tin tài khoản'
+            size_hint_y: None
+            height:self.texture_size[1]
+        ScrollView:
+            MDList:
+                TwoLineIconListItem:
+                    id: cccd
+                    text: 'Số căn cước công dân'
+                    IconLeftWidget:
+                        icon: 'account'
+
+                TwoLineIconListItem:
+                    id: ten
+                    text: 'Tên'
+                    IconLeftWidget:
+                        icon: 'account'
+
+                TwoLineIconListItem:
+                    id: tuoi
+                    text: 'Tuổi'
+                    IconLeftWidget:
+                        icon: 'account-check'
+
+                TwoLineIconListItem:
+                    id: dia_chi
+                    text: 'địa chỉ'
+                    IconLeftWidget:
+                        icon: 'city'
+
+                TwoLineIconListItem:
+                    id: sdt
+                    text: 'Số điện thoại'
+                    IconLeftWidget:
+                        icon: 'phone'
+
+                TwoLineIconListItem:
+                    id: email
+                    text: 'Tài khoản thử điện tử'
+                    IconLeftWidget:
+                        icon: 'email'
+
+    MDTextButton:
+        text: 'Trở về'
+        on_press: root.manager.current = 'profile2'
